@@ -1,2 +1,7 @@
-class LinesController < ApplicationController  
+class LinesController < ApplicationController
+  
+  def index
+    
+  end
+    
 end
