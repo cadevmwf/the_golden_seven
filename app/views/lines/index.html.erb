@@ -2,6 +2,8 @@
 
 <ul>
 	<% @lines.each do |line| %>
-		<li><%= line.name %></li>
+		<li><a href="http://localhost:3000/lines/<%= line.id %>"><%= line.name %></a></li>
 	<% end %>
 </ul>
+
+<a href="http://localhost:3000/lines/new">Add a New Line</a>
