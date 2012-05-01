@@ -1,1 +1,11 @@
 <h1>New Line</h1>
+
+<%= form_tag do %>
+	<%= label_tag :name, 'The name of the train line is:' %>
+	<%= text_field_tag :name %>
+	
+	<%= label_tag :frequency, 'The frequency of the train line is:' %>
+	<%= text_field_tag :frequency %>
+	
+	<%= submit_tag 'Create Line' %>
+<% end %>
