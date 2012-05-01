@@ -1,0 +1,13 @@
+<h1>Edit <%= @line.name %> Line</h1>
+
+<%= form_tag do %>
+	<%= label_tag :name, 'The name of the train line is:' %>
+	<%= text_field_tag :name, @line.name %>
+	
+	<%= label_tag :frequency, 'The frequency of the train line is:' %>
+	<%= text_field_tag :frequency, @line.frequency %>
+	
+	<%= submit_tag 'Update Line' %>
+<% end %>
+
+<a href="http://localhost:3000/lines">Back to List of All Lines</a>

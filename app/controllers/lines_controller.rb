@@ -1,7 +1,8 @@
 class LinesController < ApplicationController
   
   def edit
-
+    line_id = params[:id]
+    @line = TrainLine.find_by_id(line_id)
   end
   
   def show
