@@ -1,5 +1,10 @@
 class LinesController < ApplicationController
   
+  def show
+    line_id = params[:id]
+    @line = TrainLine.find_by_id(line_id)
+  end
+  
   def index
     @lines = TrainLine.all
   end
@@ -16,5 +21,5 @@ class LinesController < ApplicationController
     
     redirect_to 'http://localhost:3000/lines'
   end
-    
+  
 end
