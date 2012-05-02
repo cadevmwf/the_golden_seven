@@ -1,6 +1,6 @@
 <h1>Edit <%= @line.name %> Line</h1>
 
-<%= form_tag do %>
+<%= form_tag("http://localhost:3000/lines/#{@line.id}", :method => :put) do %>
 	<%= label_tag :name, 'The name of the train line is:' %>
 	<%= text_field_tag :name, @line.name %>
 	
