@@ -1,5 +1,19 @@
 class LinesController < ApplicationController
   
+  def update
+    line_id = params[:id]
+    name = params[:name]
+    frequency = params[:frequency]
+    
+    @line = TrainLine.find_by_id(line_id)
+    
+    @line.name = name
+    @line.frequency = frequency
+    @line.save
+    
+    redirect_to "http://localhost:3000/lines/#{@line.id}"
+  end
+  
   def edit
     line_id = params[:id]
     @line = TrainLine.find_by_id(line_id)
