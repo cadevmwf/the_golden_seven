@@ -2,7 +2,11 @@
 
 <ul>
 	<% @lines.each do |line| %>
-		<li><a href="http://localhost:3000/lines/<%= line.id %>"><%= line.name %></a></li>
+		<li>
+			<a href="http://localhost:3000/lines/<%= line.id %>"><%= line.name %></a>
+			|
+			<%= link_to "Delete", "http://localhost:3000/lines/#{line.id}", :method => :delete %>
+		</li>
 	<% end %>
 </ul>
 
