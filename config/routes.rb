@@ -1,5 +1,7 @@
 TheGoldenSeven::Application.routes.draw do
   
+  put 'lines/:id', :controller => 'lines', :action => 'update'
+  
   get 'lines/:id/edit', :controller => 'lines', :action => 'edit'
   
   post 'lines', :controller => 'lines', :action => 'create'
