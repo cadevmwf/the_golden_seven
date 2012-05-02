@@ -1,5 +1,14 @@
 class LinesController < ApplicationController
   
+  def destroy
+    line_id = params[:id]
+    @line = TrainLine.find_by_id(line_id)
+    
+    @line.destroy
+    
+    redirect_to "http://localhost:3000/lines"
+  end
+  
   def update
     line_id = params[:id]
     name = params[:name]
