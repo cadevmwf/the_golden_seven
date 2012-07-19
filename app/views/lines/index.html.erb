@@ -3,11 +3,11 @@
 <ul>
 	<% @lines.each do |line| %>
 		<li>
-			<a href="http://localhost:3000/lines/<%= line.id %>"><%= line.name %></a>
+			<%= link_to line.name, "http://localhost:3000/lines/#{line.id}" %>
 			|
 			<%= link_to "Delete", "http://localhost:3000/lines/#{line.id}", :method => :delete %>
 		</li>
 	<% end %>
 </ul>
 
-<a href="http://localhost:3000/lines/new">Add a New Line</a>
+<%= link_to "Add a New Line", "http://localhost:3000/lines/new" %>
