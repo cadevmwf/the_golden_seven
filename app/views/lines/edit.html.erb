@@ -1,13 +1,13 @@
 <h1>Edit <%= @line.name %> Line</h1>
 
-<%= form_tag(train_line_url(@line.id), :method => :put) do %>
-	<%= label_tag :name, 'The name of the train line is:' %>
-	<%= text_field_tag :name, @line.name %>
+<%= form_for @line do |f| %>
+	<%= f.label :name, 'The name of the train line is:' %>
+	<%= f.text_field :name %>
 	
-	<%= label_tag :frequency, 'The frequency of the train line is:' %>
-	<%= text_field_tag :frequency, @line.frequency %>
+	<%= f.label :frequency, 'The frequency of the train line is:' %>
+	<%= f.text_field :frequency %>
 	
-	<%= submit_tag 'Update Line' %>
+	<%= f.submit 'Create Line' %>
 <% end %>
 
 <%= link_to "Back to List of All Lines", train_lines_url %> |
