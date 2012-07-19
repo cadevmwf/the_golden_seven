@@ -11,8 +11,8 @@ class LinesController < ApplicationController
   
   def update
     line_id = params[:id]
-    name = params[:name]
-    frequency = params[:frequency]
+    name = params[:train_line][:name]
+    frequency = params[:train_line][:frequency]
     
     @line = TrainLine.find_by_id(line_id)
     
@@ -43,8 +43,8 @@ class LinesController < ApplicationController
   
   def create
     @line = TrainLine.new
-    @line.name = params[:name]
-    @line.frequency = params[:frequency]
+    @line.name = params[:train_line][:name]
+    @line.frequency = params[:train_line][:frequency]
     @line.save
     
     redirect_to train_lines_url
