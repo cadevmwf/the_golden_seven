@@ -2,5 +2,5 @@
 
 <p>The <%= @line.name %> line runs every <%= @line.frequency %> minutes.</p>
 
-<%= link_to "Back to List of All Lines", "http://localhost:3000/lines" %> |
-<%= link_to "Edit Line", "http://localhost:3000/lines/#{@line.id}/edit" %>
+<%= link_to "Back to List of All Lines", train_lines_url %> |
+<%= link_to "Edit Line", edit_train_line_url(@line.id) %>

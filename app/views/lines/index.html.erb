@@ -3,11 +3,11 @@
 <ul>
 	<% @lines.each do |line| %>
 		<li>
-			<%= link_to line.name, "http://localhost:3000/lines/#{line.id}" %>
+			<%= link_to line.name, train_line_url(line.id) %>
 			|
-			<%= link_to "Delete", "http://localhost:3000/lines/#{line.id}", :method => :delete %>
+			<%= link_to "Delete", train_line_url(line.id), :method => :delete %>
 		</li>
 	<% end %>
 </ul>
 
-<%= link_to "Add a New Line", "http://localhost:3000/lines/new" %>
+<%= link_to "Add a New Line", new_train_line_url %>

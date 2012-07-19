@@ -6,7 +6,7 @@ class LinesController < ApplicationController
     
     @line.destroy
     
-    redirect_to "http://localhost:3000/lines"
+    redirect_to train_lines_url
   end
   
   def update
@@ -20,7 +20,7 @@ class LinesController < ApplicationController
     @line.frequency = frequency
     @line.save
     
-    redirect_to "http://localhost:3000/lines/#{@line.id}"
+    redirect_to train_line_url(@line.id)
   end
   
   def edit
@@ -47,7 +47,7 @@ class LinesController < ApplicationController
     @line.frequency = params[:frequency]
     @line.save
     
-    redirect_to 'http://localhost:3000/lines'
+    redirect_to train_lines_url
   end
   
 end

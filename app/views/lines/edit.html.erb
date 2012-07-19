@@ -1,6 +1,6 @@
 <h1>Edit <%= @line.name %> Line</h1>
 
-<%= form_tag("http://localhost:3000/lines/#{@line.id}", :method => :put) do %>
+<%= form_tag(train_line_url(@line.id), :method => :put) do %>
 	<%= label_tag :name, 'The name of the train line is:' %>
 	<%= text_field_tag :name, @line.name %>
 	
@@ -10,5 +10,5 @@
 	<%= submit_tag 'Update Line' %>
 <% end %>
 
-<%= link_to "Back to List of All Lines", "http://localhost:3000/lines" %> |
-<%= link_to "Back to Line Details", "http://localhost:3000/lines/#{@line.id}" %>
+<%= link_to "Back to List of All Lines", train_lines_url %> |
+<%= link_to "Back to Line Details", train_line_url(@line.id) %>
