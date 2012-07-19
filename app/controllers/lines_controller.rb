@@ -38,7 +38,7 @@ class LinesController < ApplicationController
   end
   
   def new
-    
+    @line = TrainLine.new
   end
   
   def create
