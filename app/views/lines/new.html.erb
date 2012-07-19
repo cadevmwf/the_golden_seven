@@ -1,13 +1,5 @@
 <h1>New Line</h1>
 
-<%= form_for @line do |f| %>
-	<%= f.label :name, 'The name of the train line is:' %>
-	<%= f.text_field :name %>
-	
-	<%= f.label :frequency, 'The frequency of the train line is:' %>
-	<%= f.text_field :frequency %>
-	
-	<%= f.submit 'Create Line' %>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to "Back to List of All Lines", train_lines_url %>

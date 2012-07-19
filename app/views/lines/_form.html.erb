@@ -1,0 +1,9 @@
+<%= form_for @line do |f| %>
+	<%= f.label :name, 'The name of the train line is:' %>
+	<%= f.text_field :name %>
+	
+	<%= f.label :frequency, 'The frequency of the train line is:' %>
+	<%= f.text_field :frequency %>
+	
+	<%= f.submit 'Create Line' %>
+<% end %>
