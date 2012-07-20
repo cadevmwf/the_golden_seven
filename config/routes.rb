@@ -1,4 +1,5 @@
 TheGoldenSeven::Application.routes.draw do
+  root :to => 'Lines#index'
   
   delete 'lines/:id', :controller => 'lines', :action => 'destroy', :as => 'train_line'
   

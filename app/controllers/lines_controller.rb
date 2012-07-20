@@ -1,15 +1,13 @@
 class LinesController < ApplicationController
   
   def destroy
-    @line = TrainLine.find_by_id(params[:id])
-    @line.destroy
+    TrainLine.find_by_id(params[:id]).destroy
     
     redirect_to train_lines_url
   end
   
   def update
-    @line = TrainLine.find_by_id(params[:id])
-    @line.update_attributes(params[:train_line])
+    TrainLine.find_by_id(params[:id]).update_attributes(params[:train_line])
     
     redirect_to train_line_url(@line.id)
   end
@@ -31,7 +29,7 @@ class LinesController < ApplicationController
   end
   
   def create
-    @line = TrainLine.create(params[:train_line])
+    TrainLine.create(params[:train_line])
   
     redirect_to train_lines_url
   end
