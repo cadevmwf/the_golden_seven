@@ -7,10 +7,14 @@ class LinesController < ApplicationController
   end
   
   def update
-    @line = TrainLine.find_by_id(params[:id]).
-    @line.update_attributes(params[:train_line])
-    
-    redirect_to train_line_url(@line.id)
+    @line = TrainLine.find_by_id(params[:id])
+        
+    if @line.update_attributes(params[:train_line])
+      redirect_to train_line_url(@line), :notice => "Picture was successfully updated."
+    else
+      flash[:notice] = "Something went wrong."
+      render 'edit'
+    end
   end
   
   def edit
@@ -40,9 +44,14 @@ class LinesController < ApplicationController
   end
   
   def create
-    @line = TrainLine.create(params[:train_line])
-  
-    redirect_to train_line_url(@line)
+    @line = TrainLine.new(params[:train_line])
+    
+    if @line.save
+      redirect_to train_line_url(@line), :notice => "Picture was successfully saved."
+    else
+      flash[:notice] = "Something went wrong."
+      render 'new'
+    end
   end
   
 end
