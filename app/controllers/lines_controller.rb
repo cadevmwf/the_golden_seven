@@ -1,36 +1,25 @@
 class LinesController < ApplicationController
   
   def destroy
-    line_id = params[:id]
-    @line = TrainLine.find_by_id(line_id)
-    
+    @line = TrainLine.find_by_id(params[:id])
     @line.destroy
     
     redirect_to train_lines_url
   end
   
   def update
-    line_id = params[:id]
-    name = params[:train_line][:name]
-    frequency = params[:train_line][:frequency]
-    
-    @line = TrainLine.find_by_id(line_id)
-    
-    @line.name = name
-    @line.frequency = frequency
-    @line.save
+    @line = TrainLine.find_by_id(params[:id])
+    @line.update_attributes(params[:train_line])
     
     redirect_to train_line_url(@line.id)
   end
   
   def edit
-    line_id = params[:id]
-    @line = TrainLine.find_by_id(line_id)
+    @line = TrainLine.find_by_id(params[:id])
   end
   
   def show
-    line_id = params[:id]
-    @line = TrainLine.find_by_id(line_id)
+    @line = TrainLine.find_by_id(params[:id])
   end
   
   def index
@@ -42,11 +31,8 @@ class LinesController < ApplicationController
   end
   
   def create
-    @line = TrainLine.new
-    @line.name = params[:train_line][:name]
-    @line.frequency = params[:train_line][:frequency]
-    @line.save
-    
+    @line = TrainLine.create(params[:train_line])
+  
     redirect_to train_lines_url
   end
   
